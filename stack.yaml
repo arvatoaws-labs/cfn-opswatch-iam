@@ -1,0 +1,53 @@
+Parameters:
+  OpswatchRolePrincipal:
+    Type: String
+Resources:
+  OpswatchRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS: !Ref OpswatchRolePrincipal
+            Action: 'sts:AssumeRole'
+      Policies:
+        - PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Sid: GenericTagApi
+                Effect: Allow
+                Action:
+                  - 'tag:GetResources'
+                Resource: '*'
+              - Sid: CustomTagApis
+                Effect: Allow
+                Action:
+                  - 'cloudfront:ListTagsForResource'
+                  - 'route53:ListTagsForResource'
+                  - 'ec2:DescribeTags'
+                Resource: '*'
+          PolicyName: TagsPolicy
+        - PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 'acm:DescribeCertificate'
+                  - 'cloudfront:GetDistribution'
+                  - 'route53:GetHealthCheck'
+                  - 'efs:DescribeFileSystems'
+                  - 'ec2:DescribeVolumes'
+                  - 'ec2:DescribeInstances'
+                  - 'ec2:DescribeInstanceCreditSpecifications'
+                  - 'dynamodb:DescribeTable'
+                  - 'sqs:GetQueueAttributes'
+                  - 'rds:DescribeDBInstances'
+                  - 'ec2:DescribeInstanceTypes'
+                  - 'rds:DescribeDBClusters'
+                  - 'rds:DescribeDBClusterParameters'
+                  - 'rds:DescribeDBParameters'
+                Resource: '*'
+          PolicyName: DescribePolicy
+      RoleName: OpswatchRole
