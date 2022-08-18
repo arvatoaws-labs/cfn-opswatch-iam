@@ -48,6 +48,8 @@ Resources:
                   - 'rds:DescribeDBClusters'
                   - 'rds:DescribeDBClusterParameters'
                   - 'rds:DescribeDBParameters'
+                  - 'es:DescribeElasticsearchDomain'
+                  - 'es:ListElasticsearchVersions'
                 Resource: '*'
           PolicyName: DescribePolicy
       RoleName: OpswatchRole
