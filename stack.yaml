@@ -48,8 +48,13 @@ Resources:
                   - 'rds:DescribeDBClusters'
                   - 'rds:DescribeDBClusterParameters'
                   - 'rds:DescribeDBParameters'
+                  - 'elasticache:DescribeCacheClusters'
+                  - 'elasticache:DescribeCacheEngineVersions'
+                  - 'elasticache:DescribeReplicationGroups'
+                  - 'elasticache:DescribeUpdateActions'
                   - 'es:DescribeElasticsearchDomain'
                   - 'es:ListElasticsearchVersions'
+                  - 'rds:DescribeDBEngineVersions'
                 Resource: '*'
           PolicyName: DescribePolicy
       RoleName: OpswatchRole
