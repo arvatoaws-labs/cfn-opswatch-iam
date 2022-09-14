@@ -55,6 +55,7 @@ Resources:
                   - 'es:DescribeElasticsearchDomain'
                   - 'es:ListElasticsearchVersions'
                   - 'rds:DescribeDBEngineVersions'
+                  - 'lambda:GetFunctionConfiguration'
                 Resource: '*'
           PolicyName: DescribePolicy
       RoleName: OpswatchRole
