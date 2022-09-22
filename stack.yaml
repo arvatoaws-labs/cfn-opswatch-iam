@@ -56,6 +56,13 @@ Resources:
                   - 'es:ListElasticsearchVersions'
                   - 'rds:DescribeDBEngineVersions'
                   - 'lambda:GetFunctionConfiguration'
+                  - 'eks:DescribeCluster'
+                  - 'eks:DescribeAddonVersions'
+                  - 'eks:ListAddons'
+                  - 'eks:DescribeAddon'
+                  - 'eks:ListNodegroups'
+                  - 'eks:DescribeNodegroup'
+                  - 'ssm:GetParameter'
                 Resource: '*'
           PolicyName: DescribePolicy
       RoleName: OpswatchRole
