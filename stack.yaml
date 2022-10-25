@@ -63,6 +63,8 @@ Resources:
                   - 'eks:ListNodegroups'
                   - 'eks:DescribeNodegroup'
                   - 'ssm:GetParameter'
+                  - 'ssm:DescribeParamters'
+                  - 'ec2:DescribeImages'
                 Resource: '*'
           PolicyName: DescribePolicy
       RoleName: OpswatchRole
