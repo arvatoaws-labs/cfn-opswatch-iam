@@ -65,6 +65,7 @@ Resources:
                   - 'ssm:GetParameter'
                   - 'ssm:DescribeParameters'
                   - 'ec2:DescribeImages'
+                  - 'ssm:DescribeInstancePatchStates'
                 Resource: '*'
           PolicyName: DescribePolicy
       RoleName: OpswatchRole
