@@ -13,59 +13,62 @@ Resources:
               AWS: !Ref OpswatchRolePrincipal
             Action: 'sts:AssumeRole'
       Policies:
-        - PolicyDocument:
-            Version: 2012-10-17
-            Statement:
-              - Sid: GenericTagApi
-                Effect: Allow
-                Action:
-                  - 'tag:GetResources'
-                Resource: '*'
-              - Sid: CustomTagApis
-                Effect: Allow
-                Action:
-                  - 'cloudfront:ListTagsForResource'
-                  - 'route53:ListTagsForResource'
-                  - 'ec2:DescribeTags'
-                Resource: '*'
-          PolicyName: TagsPolicy
-        - PolicyDocument:
-            Version: 2012-10-17
-            Statement:
-              - Effect: Allow
-                Action:
-                  - 'acm:DescribeCertificate'
-                  - 'cloudfront:GetDistribution'
-                  - 'route53:GetHealthCheck'
-                  - 'elasticfilesystem:DescribeFileSystems'
-                  - 'ec2:DescribeVolumes'
-                  - 'ec2:DescribeInstances'
-                  - 'ec2:DescribeInstanceCreditSpecifications'
-                  - 'dynamodb:DescribeTable'
-                  - 'sqs:GetQueueAttributes'
-                  - 'rds:DescribeDBInstances'
-                  - 'ec2:DescribeInstanceTypes'
-                  - 'rds:DescribeDBClusters'
-                  - 'rds:DescribeDBClusterParameters'
-                  - 'rds:DescribeDBParameters'
-                  - 'elasticache:DescribeCacheClusters'
-                  - 'elasticache:DescribeCacheEngineVersions'
-                  - 'elasticache:DescribeReplicationGroups'
-                  - 'elasticache:DescribeUpdateActions'
-                  - 'es:DescribeElasticsearchDomain'
-                  - 'es:ListElasticsearchVersions'
-                  - 'rds:DescribeDBEngineVersions'
-                  - 'lambda:GetFunctionConfiguration'
-                  - 'eks:DescribeCluster'
-                  - 'eks:DescribeAddonVersions'
-                  - 'eks:ListAddons'
-                  - 'eks:DescribeAddon'
-                  - 'eks:ListNodegroups'
-                  - 'eks:DescribeNodegroup'
-                  - 'ssm:GetParameter'
-                  - 'ssm:DescribeParameters'
-                  - 'ec2:DescribeImages'
-                  - 'ssm:DescribeInstancePatchStates'
-                Resource: '*'
-          PolicyName: DescribePolicy
+      - PolicyDocument:
+          Version: 2012-10-17
+          Statement:
+            - Sid: GenericTagApi
+              Effect: Allow
+              Action:
+              - 'tag:GetResources'
+              Resource: '*'
+            - Sid: CustomTagApis
+              Effect: Allow
+              Action:
+              - 'cloudfront:ListTagsForResource'
+              - 'route53:ListTagsForResource'
+              - 'ec2:DescribeTags'
+              Resource: '*'
+        PolicyName: TagsPolicy
+      - PolicyDocument:
+          Version: 2012-10-17
+          Statement:
+          - Effect: Allow
+            Action:
+            - 'acm:DescribeCertificate'
+            - 'cloudfront:GetDistribution'
+            - 'route53:GetHealthCheck'
+            - 'elasticfilesystem:DescribeFileSystems'
+            - 'ec2:DescribeVolumes'
+            - 'ec2:DescribeInstances'
+            - 'ec2:DescribeInstanceCreditSpecifications'
+            - 'dynamodb:DescribeTable'
+            - 'sqs:GetQueueAttributes'
+            - 'rds:DescribeDBInstances'
+            - 'ec2:DescribeInstanceTypes'
+            - 'rds:DescribeDBClusters'
+            - 'rds:DescribeDBClusterParameters'
+            - 'rds:DescribeDBParameters'
+            - 'elasticache:DescribeCacheClusters'
+            - 'elasticache:DescribeCacheEngineVersions'
+            - 'elasticache:DescribeReplicationGroups'
+            - 'elasticache:DescribeUpdateActions'
+            - 'es:DescribeElasticsearchDomain'
+            - 'es:ListElasticsearchVersions'
+            - 'rds:DescribeDBEngineVersions'
+            - 'lambda:GetFunctionConfiguration'
+            - 'eks:DescribeCluster'
+            - 'eks:DescribeAddonVersions'
+            - 'eks:ListAddons'
+            - 'eks:DescribeAddon'
+            - 'eks:ListNodegroups'
+            - 'eks:DescribeNodegroup'
+            - 'ssm:GetParameter'
+            - 'ssm:DescribeParameters'
+            - 'ec2:DescribeImages'
+            - 'ssm:DescribeInstancePatchStates'
+            - 'elasticloadbalancing:DescribeLoadBalancers'
+            - 'mq:DescribeBrokerEngineTypes'
+            - 'mq:DescribeBroker'
+            Resource: '*'
+        PolicyName: DescribePolicy
       RoleName: OpswatchRole
