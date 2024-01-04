@@ -71,6 +71,8 @@ Resources:
             - 'elasticloadbalancing:DescribeListeners'
             - 'mq:DescribeBrokerEngineTypes'
             - 'mq:DescribeBroker'
+            - 'ssm:DescribeInstanceInformation'
+            - 'backup:ListBackupJobs'
             Resource: '*'
         PolicyName: DescribePolicy
       RoleName: OpswatchRole
