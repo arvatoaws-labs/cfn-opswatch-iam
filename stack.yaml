@@ -73,6 +73,7 @@ Resources:
             - 'mq:DescribeBroker'
             - 'ssm:DescribeInstanceInformation'
             - 'backup:ListBackupJobs'
+            - 'backup:GetBackupPlan'
             Resource: '*'
         PolicyName: DescribePolicy
       RoleName: OpswatchRole
