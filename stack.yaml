@@ -8,26 +8,26 @@ Resources:
       AssumeRolePolicyDocument:
         Version: 2012-10-17
         Statement:
-          - Effect: Allow
-            Principal:
-              AWS: !Ref OpswatchRolePrincipal
-            Action: 'sts:AssumeRole'
+        - Effect: Allow
+          Principal:
+            AWS: !Ref OpswatchRolePrincipal
+          Action: 'sts:AssumeRole'
       Policies:
       - PolicyDocument:
           Version: 2012-10-17
           Statement:
-            - Sid: GenericTagApi
-              Effect: Allow
-              Action:
-              - 'tag:GetResources'
-              Resource: '*'
-            - Sid: CustomTagApis
-              Effect: Allow
-              Action:
-              - 'cloudfront:ListTagsForResource'
-              - 'route53:ListTagsForResource'
-              - 'ec2:DescribeTags'
-              Resource: '*'
+          - Sid: GenericTagApi
+            Effect: Allow
+            Action:
+            - 'tag:GetResources'
+            Resource: '*'
+          - Sid: CustomTagApis
+            Effect: Allow
+            Action:
+            - 'cloudfront:ListTagsForResource'
+            - 'route53:ListTagsForResource'
+            - 'ec2:DescribeTags'
+            Resource: '*'
         PolicyName: TagsPolicy
       - PolicyDocument:
           Version: 2012-10-17
