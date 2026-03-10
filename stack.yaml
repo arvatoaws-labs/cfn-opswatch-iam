@@ -77,6 +77,11 @@ Resources:
             - 'ssm:DescribeInstanceInformation'
             - 'backup:ListBackupJobs'
             - 'backup:GetBackupPlan'
+            - 'health:Describe*'
+            - 'organizations:ListAccounts'
+            - 'organizations:ListParents'
+            - 'organizations:DescribeAccount'
+            - 'organizations:ListDelegatedAdministrators'
             Resource: '*'
         PolicyName: DescribePolicy
       RoleName: OpswatchRole
