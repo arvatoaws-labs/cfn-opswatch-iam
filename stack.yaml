@@ -56,6 +56,7 @@ Resources:
             - 'es:DescribeElasticsearchDomain'
             - 'es:ListElasticsearchVersions'
             - 'rds:DescribeDBEngineVersions'
+            - 'rds:DescribeServerlessV2PlatformVersions'
             - 'lambda:GetFunctionConfiguration'
             - 'eks:DescribeCluster'
             - 'eks:DescribeAddonVersions'
